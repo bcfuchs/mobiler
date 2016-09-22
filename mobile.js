@@ -45,7 +45,7 @@
    //  testExternal();
 
     var testQRCode  = function() {
-	console.log("DDDDDDDDD---------x");
+
 	console.log(window.location.pathname);
 	if (window.location.pathname == "/game/list") 
 	    return true;
