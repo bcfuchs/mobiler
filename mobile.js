@@ -51,8 +51,13 @@
 	    return true;
 
 	// TODO put in a template
-	$("body").prepend('<div id="mobileqr"><div id="qrcode1"><div id="qr1"></div></div><div id="qrcode2"><div id="qr2"></div></div></div>');
+	var style = '<style>#qr-accept-btn { text-decoration:underline;cursor:pointer}</style>';
 	
+	var acc = style + '<div id="qr-accept">A mobile connection is available.<span id="qr-accept-btn">Click here to accept</span>';
+	$("body").prepend(acc+'<div id="mobileqr" style="display:none"><div id="qrcode1"><div id="qr1"></div></div><div id="qrcode2"><div id="qr2"></div></div></div>');
+	$("#qr-accept-btn").on('click',function(e){
+	    $("#mobileqr").toggle();
+	});
 
 
 // generate n qrs and put them in #mobileqr with captions
